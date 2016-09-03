@@ -1,0 +1,45 @@
+name:                personal-fitness
+version:             0.1.0.0
+synopsis:            Initial project template from stack
+description:         Please see README.md
+homepage:            https://github.com/dat2/personal-fitness#readme
+license:             BSD3
+license-file:        LICENSE
+author:              Nicholas Dujay
+maintainer:          nickdujay@gmail.com
+copyright:           Copyright: (c) 2016 Nicholas Dujay
+category:            Web
+build-type:          Simple
+-- extra-source-files:
+cabal-version:       >=1.10
+
+library
+  hs-source-dirs:      src
+  exposed-modules:     Lib
+  build-depends:       base >= 4.7 && < 5
+                     , wai
+                     , warp
+  default-language:    Haskell2010
+
+executable personal-fitness-exe
+  hs-source-dirs:      app
+  main-is:             Main.hs
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  build-depends:       base
+                     , personal-fitness
+                     , wai
+                     , warp
+  default-language:    Haskell2010
+
+test-suite personal-fitness-test
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      test
+  main-is:             Spec.hs
+  build-depends:       base
+                     , personal-fitness
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  default-language:    Haskell2010
+
+source-repository head
+  type:     git
+  location: https://github.com/dat2/personal-fitness

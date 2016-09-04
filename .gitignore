@@ -1,4 +1,5 @@
-# client stuff
+# environment stuff
+.env
 
 # haskell stuff
 dist
